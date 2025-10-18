@@ -1,0 +1,21 @@
+# Ignore Qt build directories
+TcpUdpTerminal/build/
+
+# Ignore temporary files
+*.o
+*.obj
+*.log
+*.pro.user
+*.qmake.stash
+
+# Ignore CMake artifacts
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Ignore binaries
+*.exe
+*.dll
+*.so
+*.out
