@@ -13,7 +13,509 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tabTcpClient">
+       <attribute name="title">
+        <string>Tcp Client</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_16" stretch="0,0">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayoutUpTcpClient" stretch="3,2">
+          <item>
+           <widget class="QGroupBox" name="groupBoxDataTcpClient">
+            <property name="title">
+             <string>Data</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_13">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayoutReceivedTcpClient">
+               <item>
+                <widget class="QLabel" name="labelRecDataTcpClient">
+                 <property name="text">
+                  <string>Received Data</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QTextBrowser" name="textBrowserRecDataTcpClient"/>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayoutSentTcpClient">
+               <item>
+                <widget class="QLabel" name="labelSentDataTcpClient">
+                 <property name="text">
+                  <string>Sent Data</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QTextBrowser" name="textBrowserSentDataTcpClient"/>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayoutRightTcpClient">
+            <item>
+             <widget class="QGroupBox" name="groupBoxConnectionTcpClient">
+              <property name="title">
+               <string>Connection</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_14">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayoutConnection1TcpClient">
+                 <item>
+                  <widget class="QLabel" name="labelIpTcpClient">
+                   <property name="text">
+                    <string>Ip</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEditIpTcpClient"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="labelPortTcpClient">
+                   <property name="text">
+                    <string>Port</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEditPortTcpClient"/>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayoutConnection2TcpClient">
+                 <item>
+                  <spacer name="horizontalSpacerConnectionTcpClient">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButtonConnectionTcpClient">
+                   <property name="text">
+                    <string>Connect</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBoxSendTcpClient">
+              <property name="title">
+               <string>Send</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_15">
+               <item>
+                <widget class="QPlainTextEdit" name="plainTextEditSendTcpClient"/>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayoutSendTcpClient">
+                 <item>
+                  <spacer name="horizontalSpacerSendTcpClient">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="radioButtonSendTcpClient">
+                   <property name="text">
+                    <string>Hexadecimal</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButtonSendTcpClient">
+                   <property name="text">
+                    <string>Send</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBoxActionsTcpClient">
+          <property name="title">
+           <string>Actions</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_8">
+           <item>
+            <widget class="QTextBrowser" name="textBrowserActionsTcpClient"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabTcpServer">
+       <attribute name="title">
+        <string>Tcp Server</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayoutUpTcpServer" stretch="3,2">
+          <item>
+           <widget class="QGroupBox" name="groupBoxDataTcpServer">
+            <property name="title">
+             <string>Data</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_10">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayoutReceivedTcpServer">
+               <item>
+                <widget class="QLabel" name="labelRecDataTcpServer">
+                 <property name="text">
+                  <string>Received Data</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QTextBrowser" name="textBrowserRecDataTcpServer"/>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayoutSentTcpServer">
+               <item>
+                <widget class="QLabel" name="labelSentDataTcpServer">
+                 <property name="text">
+                  <string>Sent Data</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QTextBrowser" name="textBrowserSentDataTcpServer"/>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayoutRightTcpServer">
+            <item>
+             <widget class="QGroupBox" name="groupBoxConnectionTcpServer">
+              <property name="title">
+               <string>Connection</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_11">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayoutConnection1TcpServer">
+                 <item>
+                  <widget class="QLabel" name="labelIpTcpServer">
+                   <property name="text">
+                    <string>Ip</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEditIpTcpServer"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="labelPortTcpServer">
+                   <property name="text">
+                    <string>Port</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEditPortTcpServer"/>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayoutConnection2TcpServer">
+                 <item>
+                  <spacer name="horizontalSpacerConnectionTcpServer">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButtonConnectionTcpServer">
+                   <property name="text">
+                    <string>Connect</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBoxSendTcpServer">
+              <property name="title">
+               <string>Send</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_12">
+               <item>
+                <widget class="QPlainTextEdit" name="plainTextEditSendTcpServer"/>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayoutSendTcpServer">
+                 <item>
+                  <spacer name="horizontalSpacerSendTcpServer">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="radioButtonSendTcpServer">
+                   <property name="text">
+                    <string>Hexadecimal</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButtonSendTcpServer">
+                   <property name="text">
+                    <string>Send</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBoxActionsTcpServer">
+          <property name="title">
+           <string>Actions</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <widget class="QTextBrowser" name="textBrowserActions_2"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabUdp">
+       <attribute name="title">
+        <string>Udp</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_9">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayoutUpUdp" stretch="3,2">
+          <item>
+           <widget class="QGroupBox" name="groupBoxDataUdp">
+            <property name="title">
+             <string>Data</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayoutReceivedUdp">
+               <item>
+                <widget class="QLabel" name="labelRecDataUdp">
+                 <property name="text">
+                  <string>Received Data</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QTextBrowser" name="textBrowserRecDataUdp"/>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayoutSentUdp">
+               <item>
+                <widget class="QLabel" name="labelSentDataUdp">
+                 <property name="text">
+                  <string>Sent Data</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QTextBrowser" name="textBrowserSentDataUdp"/>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayoutRightUdp">
+            <item>
+             <widget class="QGroupBox" name="groupBoxConnectionUdp">
+              <property name="title">
+               <string>Connection</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_4">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayoutConnection1Udp">
+                 <item>
+                  <widget class="QLabel" name="labelIpUdp">
+                   <property name="text">
+                    <string>Ip</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEditIpUdp"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="labelPortUdp">
+                   <property name="text">
+                    <string>Port</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEditPortUdp"/>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayoutConnection2Udp">
+                 <item>
+                  <spacer name="horizontalSpacerConnectionUdp">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButtonConnectionUdp">
+                   <property name="text">
+                    <string>Connect</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBoxSendUdp">
+              <property name="title">
+               <string>Send</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_5">
+               <item>
+                <widget class="QPlainTextEdit" name="plainTextEditSendUdp"/>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayoutSendUdp">
+                 <item>
+                  <spacer name="horizontalSpacerSendUdp">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="radioButtonSendUdp">
+                   <property name="text">
+                    <string>Hexadecimal</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButtonSendUdp">
+                   <property name="text">
+                    <string>Send</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBoxActionsUdp">
+          <property name="title">
+           <string>Actions</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <widget class="QTextBrowser" name="textBrowserActionsUdp"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
