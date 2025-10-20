@@ -36,6 +36,7 @@ void TcpClient::onReadyRead()
 {
     QByteArray data = socket->readAll();
     qDebug() << "Client received:" << data;
+    emit messageReceived(data.toStdString());
 }
 
 void TcpClient::onDisconnected()

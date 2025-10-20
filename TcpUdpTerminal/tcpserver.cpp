@@ -10,6 +10,7 @@ TcpServer::TcpServer(QObject *parent)
 
 bool TcpServer::startServer(quint16 port)
 {
+    qDebug() << "TcpServer::startServer" << port;
     if (!server->listen(QHostAddress::Any, port)) {
         qDebug() << "Server could not start:" << server->errorString();
         return false;
@@ -58,6 +59,6 @@ void TcpServer::onReadyRead()
 
     QByteArray data = client->readAll();
     qDebug() << "Server received:" << data;
-
-    client->write("Server echo: " + data);
+    emit messageReceived(data.toStdString());
+    // client->write("Server echo: " + data);
 }

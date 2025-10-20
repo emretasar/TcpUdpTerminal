@@ -18,6 +18,9 @@ private slots:
     void onReadyRead();
     void onDisconnected();
 
+signals:
+    void messageReceived(const std::string& message);
+
 private:
     QTcpSocket *socket;
 };

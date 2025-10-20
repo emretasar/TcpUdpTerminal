@@ -18,6 +18,9 @@ private slots:
     void onNewConnection();
     void onReadyRead();
 
+signals:
+    void messageReceived(std::string message);
+
 private:
     QTcpServer *server;
     QList<QTcpSocket*> clients;
