@@ -11,12 +11,15 @@ TcpServer::TcpServer(QObject *parent)
 bool TcpServer::startServer(quint16 port)
 {
     qDebug() << "TcpServer::startServer" << port;
+    m_tbActionTextBrowser->append("TcpServer::startServer: " + QString::number(port));
     if (!server->listen(QHostAddress::Any, port)) {
-        qDebug() << "Server could not start:" << server->errorString();
+        qDebug() << "Server could not start: " << server->errorString();
+        m_tbActionTextBrowser->append("Server could not start: " + server->errorString());
         return false;
     }
 
     qDebug() << "Server started on port" << port;
+    m_tbActionTextBrowser->append("Server started on port: " + QString::number(port));
     return true;
 }
 
@@ -32,6 +35,12 @@ void TcpServer::sendMessage(const QString &message)
     }
 
     qDebug() << "Server sent:" << message;
+    m_tbActionTextBrowser->append("Server sent: " + message);
+}
+
+void TcpServer::setActionBrowser(QTextBrowser &actionBrowser)
+{
+    m_tbActionTextBrowser = &actionBrowser;
 }
 
 void TcpServer::onNewConnection()
@@ -41,10 +50,12 @@ void TcpServer::onNewConnection()
         clients << client;
 
         qDebug() << "New client connected from" << client->peerAddress().toString();
+        m_tbActionTextBrowser->append("New client connected from: " + client->peerAddress().toString());
 
         connect(client, &QTcpSocket::readyRead, this, &TcpServer::onReadyRead);
         connect(client, &QTcpSocket::disconnected, this, [this, client]() {
             qDebug() << "Client disconnected.";
+            m_tbActionTextBrowser->append("Client disconnected.");
             clients.removeOne(client);
             client->deleteLater();
         });
@@ -59,6 +70,7 @@ void TcpServer::onReadyRead()
 
     QByteArray data = client->readAll();
     qDebug() << "Server received:" << data;
+    m_tbActionTextBrowser->append("Server received: " + data);
     emit messageReceived(data.toStdString());
     // client->write("Server echo: " + data);
 }

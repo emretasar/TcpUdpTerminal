@@ -3,6 +3,7 @@
 
 #include <QTcpSocket>
 #include <QObject>
+#include <QTextBrowser>
 
 class TcpClient : public QObject
 {
@@ -12,6 +13,7 @@ public:
     explicit TcpClient(QObject *parent = nullptr);
     void connectToServer(const QString &host, quint16 port);
     void sendMessage(const QString &message);
+    void setActionBrowser(QTextBrowser& actionBrowser);
 
 private slots:
     void onConnected();
@@ -23,6 +25,7 @@ signals:
 
 private:
     QTcpSocket *socket;
+    QTextBrowser *m_tbActionTextBrowser;
 };
 
 #endif // TCPCLIENT_H

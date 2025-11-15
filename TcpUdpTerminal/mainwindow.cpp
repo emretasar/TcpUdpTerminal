@@ -8,6 +8,8 @@ MainWindow::MainWindow(QWidget *parent)
     , m_pTcpClient(new TcpClient(this))
 {
     ui->setupUi(this);
+    m_pTcpServer->setActionBrowser(*ui->textBrowserActionsTcpServer);
+    m_pTcpClient->setActionBrowser(*ui->textBrowserActionsTcpClient);
 
     createConnections();
 }
@@ -34,6 +36,7 @@ void MainWindow::onTcpServerListenButtonClicked()
     quint16 port = ui->lineEditPortTcpServer->text().toUInt(&isPortValid, 10);
     if (!isPortValid) {
         qDebug() << "Listening port number is not valid for server";
+        ui->textBrowserActionsTcpServer->append("Listening port number is not valid for server");
         return;
     }
     m_pTcpServer->startServer(port);
@@ -47,6 +50,7 @@ void MainWindow::onTcpClientConnectButtonClicked()
     QString ip = ui->lineEditIpTcpClient->text();
     if (!isPortValid || !hostAddress.setAddress(ip)) {
         qDebug() << "Connection port number or host IP is not valid for client";
+        ui->textBrowserActionsTcpClient->append("Connection port number or host IP is not valid for client");
         return;
     }
     m_pTcpClient->connectToServer(ip, port);

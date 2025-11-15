@@ -167,7 +167,7 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_7">
            <item>
-            <widget class="QTextBrowser" name="textBrowserActions_2"/>
+            <widget class="QTextBrowser" name="textBrowserActionsTcpServer"/>
            </item>
           </layout>
          </widget>

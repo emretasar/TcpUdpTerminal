@@ -4,6 +4,7 @@
 #include <QTcpServer>
 #include <QTcpSocket>
 #include <QObject>
+#include <QTextBrowser>
 
 class TcpServer : public QObject
 {
@@ -13,6 +14,7 @@ public:
     explicit TcpServer(QObject *parent = nullptr);
     bool startServer(quint16 port);
     void sendMessage(const QString &message);
+    void setActionBrowser(QTextBrowser& actionBrowser);
 
 private slots:
     void onNewConnection();
@@ -24,6 +26,7 @@ signals:
 private:
     QTcpServer *server;
     QList<QTcpSocket*> clients;
+    QTextBrowser *m_tbActionTextBrowser;
 };
 
 #endif // TCPSERVER_H
